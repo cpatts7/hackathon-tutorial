@@ -19,7 +19,8 @@
      npm install
      ```
   2. Load truffle-config.js into ganache or in a separate CMD console:
-  2b. ```console
+  2b. Run Ganache
+      ```console
      ganache
      ```
   3. ```console
