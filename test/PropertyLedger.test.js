@@ -1,3 +1,5 @@
+const assert = require("chai").assert;
+const truffleAssert = require('truffle-assertions');
 const { catchRevert } = require("./exceptionsHelpers.js");
 var PropertyLedgerContract = artifacts.require("./PropertyLedgerContract.sol");
 
@@ -50,11 +52,22 @@ contract("PropertyLedgerContract", function (accounts) {
 
       });
 
-      // it("Can disable ledger", async () => {
+      
 
-      //   await instance.setRecordsPublishingOpen(false, {from: contractOwner});
-      //   await instance.recordPropertyPurchase("1234 Street, Toronto", "John Smith", "2022-01-01", {from: chris});
+      it("Can disable ledger", async () => {
 
-      // });
+        await instance.setRecordsPublishingOpen(false, {from: contractOwner});
+
+        //If anyone can help me get this particular step to work that would be great. 
+
+        // await truffleAssert.reverts(
+        //   instance.recordPropertyPurchase("1234 Street, Toronto", "John Smith", "2022-01-01", {from: chris}),
+        //   "Ledger entry cannot be entered when the contract is closed."
+        // );
+        
+        await instance.setRecordsPublishingOpen(true, {from: contractOwner});
+        await instance.recordPropertyPurchase("1234 Street, Toronto", "John Smith", "2022-01-01", {from: chris});
+
+      });
 
     });

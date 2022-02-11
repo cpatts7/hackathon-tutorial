@@ -26,7 +26,7 @@ contract PropertyLedgerContract is Ownable {
     }
 
     function recordPropertyPurchase(string memory _propertyAddress, string memory _ownerName, string memory _soldDate) public returns (uint256) {
-        require(recordsPublishingOpen);
+        require(recordsPublishingOpen, "Ledger entry cannot be entered when the contract is closed.");
         _propertyRecordIds.increment();
         uint256 _id = _propertyRecordIds.current();
 
