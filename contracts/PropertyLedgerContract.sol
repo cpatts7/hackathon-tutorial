@@ -8,6 +8,8 @@ contract PropertyLedgerContract is Ownable {
     using Counters for Counters.Counter;
     Counters.Counter private _propertyRecordIds;
 
+    bool recordsPublishingOpen;
+
     struct PropertyRecord
     {
         uint256 id;
@@ -19,7 +21,12 @@ contract PropertyLedgerContract is Ownable {
 
     mapping (uint256 => PropertyRecord) propertyRecordIdMapping;
 
+    constructor() {
+      recordsPublishingOpen = true;
+    }
+
     function recordPropertyPurchase(string memory _propertyAddress, string memory _ownerName, string memory _soldDate) public returns (uint256) {
+        require(recordsPublishingOpen);
         _propertyRecordIds.increment();
         uint256 _id = _propertyRecordIds.current();
 
@@ -45,5 +52,9 @@ contract PropertyLedgerContract is Ownable {
         _ownerName = pr.ownerName;
         _soldDate = pr.soldDate;
         _recordedBy = pr.recordedBy;
+    }
+
+    function setRecordsPublishingOpen(bool val) public onlyOwner {
+        recordsPublishingOpen = val;
     }
 }

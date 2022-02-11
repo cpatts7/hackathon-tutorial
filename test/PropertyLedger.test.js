@@ -50,4 +50,11 @@ contract("PropertyLedgerContract", function (accounts) {
 
       });
 
+      // it("Can disable ledger", async () => {
+
+      //   await instance.setRecordsPublishingOpen(false, {from: contractOwner});
+      //   await instance.recordPropertyPurchase("1234 Street, Toronto", "John Smith", "2022-01-01", {from: chris});
+
+      // });
+
     });

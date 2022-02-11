@@ -6,6 +6,11 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
 				"anonymous": false,
 				"inputs": [
 					{
@@ -110,6 +115,19 @@
 			{
 				"inputs": [
 					{
+						"internalType": "bool",
+						"name": "val",
+						"type": "bool"
+					}
+				],
+				"name": "setRecordsPublishingOpen",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "address",
 						"name": "newOwner",
 						"type": "address"
@@ -183,11 +201,11 @@
 			]
 		},
 		"contracts/PropertyLedgerContract.sol": {
-			"keccak256": "0x32f9fd4e5dabe777f41b3cf25a0408169e85713f0d54b509a62dc5ac3f9515ba",
+			"keccak256": "0x22da309c3af326b6090ef30946be53cb8e7206a8a76e782a18e44de59a9add53",
 			"license": "UNLICENSED",
 			"urls": [
-				"bzz-raw://efb846081d20371c5e953cde3397f102ff4e0481d8b5f766d8c8f3b277b5a289",
-				"dweb:/ipfs/QmSpSw3pFuXo4C8N11Wn3CnYFbpwB8pptsYJwMQiu79SLt"
+				"bzz-raw://54004a6f0af70b839543ddaf07e4977603de4218225b80ec9f3c3d3be36f1139",
+				"dweb:/ipfs/QmPHrvysTayqz52XQzWb2NiouX8XhawqbhGEH68bYtFFEP"
 			]
 		}
 	},
